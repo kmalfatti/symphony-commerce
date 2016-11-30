@@ -14,9 +14,11 @@ $(document).ready(function() {
                 ).show('slow')
         }
     }).done(function(data){
+      $('#pageTitle').append(data.pageTitle)
+      $('#extraInfo').append(data.extraInfo)
       var products = data.products
       products.forEach(function(item){
-        $('.products').append('<p>'+item.name+'</p>' + '<img src=https:' + item.mainImage.ref + '><p>$ ' + (item.defaultPriceInCents/100).toFixed(2) + '</p>')
+        $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"> 0 </td></tr>')
       })
     })
   })

@@ -1,0 +1,31 @@
+img {
+  width: 200px
+}
+
+.name *{
+  display: block;
+  margin: 0 auto;
+}
+
+.name, .price, .quantity{
+  text-align: center;
+}
+
+th, td{
+  border: 1px solid black
+}
+
+table{
+  width: 700px;
+  margin: 0 auto;
+}
+
+#title{
+  width: 698px;
+  display: block;
+  margin: 0 auto; 
+}
+
+#extraInfo{
+  font-style: italic;
+}
