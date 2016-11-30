@@ -18,7 +18,20 @@ $(document).ready(function() {
       $('#extraInfo').append(data.extraInfo)
       var products = data.products
       products.forEach(function(item){
-        $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"> 0 </td></tr>')
+        $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"><div class="plus-minus"><button class="minus" onClick=subtract.call(this)>-</button><button class="plus" onClick=add.call(this)>+</button></div><p> 0 </p><button>Add to cart</button></td></tr>')
       })
     })
   })
+
+
+function subtract(){
+  var count = Number($(this).parent().next().text())
+  if (count>0){
+    $(this).parent().next().text(count-1)
+  }
+}
+
+function add(){
+  var count = Number($(this).parent().next().text())
+  $(this).parent().next().text(count+1)
+}

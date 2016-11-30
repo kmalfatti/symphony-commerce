@@ -2,13 +2,26 @@ img {
   width: 200px
 }
 
-.name *{
+.name *, .quantity *{
   display: block;
   margin: 0 auto;
 }
 
 .name, .price, .quantity{
   text-align: center;
+}
+
+.quantity .plus-minus * {
+  display: inline-block;
+}
+
+.quantity p{
+  padding: 5px 0;
+}
+
+button{
+  border-radius: 5px;
+  background-color: rgb(250,250,250)
 }
 
 th, td{
