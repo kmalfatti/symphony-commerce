@@ -14,6 +14,9 @@ $(document).ready(function() {
                 ).show('slow')
         }
     }).done(function(data){
-      console.log('im done')
+      var products = data.products
+      products.forEach(function(item){
+        $('.products').append('<p>'+item.name+'</p>' + '<img src=https:' + item.mainImage.ref + '><p>$ ' + (item.defaultPriceInCents/100).toFixed(2) + '</p>')
+      })
     })
   })
