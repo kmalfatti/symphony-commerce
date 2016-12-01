@@ -6,4 +6,4 @@ Simple store page created for **Symphony Commerce** using
 * jQuery
 * Ajax
 
-[Live site](symphony-commerce.bitballoon.com)
+[Live site](http://symphony-commerce.bitballoon.com)
