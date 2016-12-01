@@ -11,9 +11,26 @@
   <main>
     <div id="title">
       <h3 id="pageTitle"></h3>
-      <p id="extraInfo"></p> 
+      <p id="extraInfo"></p>
+      <div id="select">
+        <div id="sort">
+          <p>Sort By:</p>
+          <select class="sort" onchange="sort()">
+            <option value=""></option>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+            <option value="date">Release Date</option>
+          </select>
+        </div>
+        <div id="filter">
+          <p>Filter:</p>
+          <select name="filter">
+            <option value=""></option>
+            <option value="greater">Greater than $19.99</option>
+          </select>
+        </div> 
+      </div>
     </div>
-    
     <table>
       <thead>
       <tr>

@@ -42,3 +42,11 @@ table{
 #extraInfo{
   font-style: italic;
 }
+
+#select *{
+  display: inline-block;
+}
+
+#filter{
+  padding-left: 10px;
+}
