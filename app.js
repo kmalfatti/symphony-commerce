@@ -39,7 +39,7 @@ function add(){
 }
 
 function sort(){
-  if ($('select').val()==('name')){
+  if ($('.sort').val()==('name')){
     var sorted = []
     products.sort(function(a, b) {
     var nameA = a.name.toUpperCase();
@@ -56,7 +56,7 @@ function sort(){
         $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"><div class="plus-minus"><button class="minus" onClick=subtract.call(this)>-</button><button class="plus" onClick=add.call(this)>+</button></div><p> 0 </p><button>Add to cart</button></td></tr>')
     })
   }
-  if ($('select').val()==('price')){
+  if ($('.sort').val()==('price')){
     products.sort(function(a, b) {
       return a.defaultPriceInCents - b.defaultPriceInCents;
     });
@@ -65,10 +65,32 @@ function sort(){
         $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"><div class="plus-minus"><button class="minus" onClick=subtract.call(this)>-</button><button class="plus" onClick=add.call(this)>+</button></div><p> 0 </p><button>Add to cart</button></td></tr>')
     })
   }
-  if ($('select').val()==('date')){
+  if ($('.sort').val()==('date')){
     products.sort(function(a, b) {
       return a.createdAt - b.createdAt;
     });
+    $('.products').empty()
+    products.forEach(function(item){
+        $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"><div class="plus-minus"><button class="minus" onClick=subtract.call(this)>-</button><button class="plus" onClick=add.call(this)>+</button></div><p> 0 </p><button>Add to cart</button></td></tr>')
+    })
+  }
+}
+
+function filter(){
+  if ($('.filter').val()==('greater')){
+    var filtered = []
+    products.forEach(function(item){
+      if (item.defaultPriceInCents > 1999){
+        filtered.push(item)
+      }
+    })
+    $('.products').empty()
+    filtered.forEach(function(item){
+        $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"><div class="plus-minus"><button class="minus" onClick=subtract.call(this)>-</button><button class="plus" onClick=add.call(this)>+</button></div><p> 0 </p><button>Add to cart</button></td></tr>')
+    })
+  }
+  if ($('.filter').val()==('')){
+    console.log('in')
     $('.products').empty()
     products.forEach(function(item){
         $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"><div class="plus-minus"><button class="minus" onClick=subtract.call(this)>-</button><button class="plus" onClick=add.call(this)>+</button></div><p> 0 </p><button>Add to cart</button></td></tr>')

@@ -6,7 +6,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Symphony Commerce</h1>
+<header>
+  <h1>Symphony Commerce</h1>
+</header>
 
   <main>
     <div id="title">
@@ -24,7 +26,7 @@
         </div>
         <div id="filter">
           <p>Filter:</p>
-          <select name="filter">
+          <select class="filter" onchange="filter()">
             <option value=""></option>
             <option value="greater">Greater than $19.99</option>
           </select>
