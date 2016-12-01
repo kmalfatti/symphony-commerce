@@ -1,5 +1,6 @@
 
 var products;
+
 $(document).ready(function() {
     $.ajax({
         url: 'http://sneakpeeq-sites.s3.amazonaws.com/interviews/ce/feeds/store.js',
@@ -9,7 +10,7 @@ $(document).ready(function() {
         },
         error: function(err){
             console.log('error: ', err)
-            $('.products').append(
+            $('#title').append(
                 '<h3>Error</h3>',
                 '<p>Sorry, something went wrong while processing your request.</p>',
                 '<p>Please try again later.</p>'
@@ -40,7 +41,7 @@ function add(){
 
 function sort(){
   if ($('.sort').val()==('name')){
-    var sorted = []
+    $('.filter').val('')
     products.sort(function(a, b) {
     var nameA = a.name.toUpperCase();
     var nameB = b.name.toUpperCase();
@@ -57,6 +58,7 @@ function sort(){
     })
   }
   if ($('.sort').val()==('price')){
+    $('.filter').val('')
     products.sort(function(a, b) {
       return a.defaultPriceInCents - b.defaultPriceInCents;
     });
@@ -66,6 +68,7 @@ function sort(){
     })
   }
   if ($('.sort').val()==('date')){
+    $('.filter').val('')
     products.sort(function(a, b) {
       return a.createdAt - b.createdAt;
     });
@@ -90,7 +93,6 @@ function filter(){
     })
   }
   if ($('.filter').val()==('')){
-    console.log('in')
     $('.products').empty()
     products.forEach(function(item){
         $('.products').append('<tr><td class="name">'+item.name + '<img src=https:' + item.mainImage.ref + '><td class="price">$' + (item.defaultPriceInCents/100).toFixed(2) + '</td>' + '<td class="quantity"><div class="plus-minus"><button class="minus" onClick=subtract.call(this)>-</button><button class="plus" onClick=add.call(this)>+</button></div><p> 0 </p><button>Add to cart</button></td></tr>')

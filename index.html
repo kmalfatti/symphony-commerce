@@ -9,44 +9,43 @@
 <header>
   <h1>Symphony Commerce</h1>
 </header>
-
-  <main>
-    <div id="title">
-      <h3 id="pageTitle"></h3>
-      <p id="extraInfo"></p>
-      <div id="select">
-        <div id="sort">
-          <p>Sort By:</p>
-          <select class="sort" onchange="sort()">
-            <option value=""></option>
-            <option value="name">Name</option>
-            <option value="price">Price</option>
-            <option value="date">Release Date</option>
-          </select>
-        </div>
-        <div id="filter">
-          <p>Filter:</p>
-          <select class="filter" onchange="filter()">
-            <option value=""></option>
-            <option value="greater">Greater than $19.99</option>
-          </select>
-        </div> 
+<main>
+  <div id="title">
+    <h3 id="pageTitle"></h3>
+    <p id="extraInfo"></p>
+    <div id="select">
+      <div id="sort">
+        <p>Sort By:</p>
+        <select class="sort" onchange="sort()">
+          <option value=""></option>
+          <option value="name">Name</option>
+          <option value="price">Price</option>
+          <option value="date">Release Date</option>
+        </select>
       </div>
+      <div id="filter">
+        <p>Filter:</p>
+        <select class="filter" onchange="filter()">
+          <option value=""></option>
+          <option value="greater">Greater than $19.99</option>
+        </select>
+      </div> 
     </div>
-    <table>
-      <thead>
-      <tr>
-        <th>Item</th>
-        <th>Price</th>
-        <th>Quantity</th>
-      </tr>
-      </thead>
-      <tbody class="products">
-        
-      </tbody>
-    </table>
-  </main>
-  <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
-  <script src="app.js"></script>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody class="products">  
+    </tbody>
+  </table>
+</main>
+<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
