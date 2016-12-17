@@ -67,6 +67,19 @@ table{
   display: inline-block;
 }
 
+#total{
+  display: inline-block;
+  float: right;
+  font-weight: bold;
+  font-size: 1.3rem; 
+}
+
+#select:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
 #filter{
   padding-left: 10px;
 }
